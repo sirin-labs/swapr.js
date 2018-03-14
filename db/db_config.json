@@ -1,0 +1,44 @@
+{
+  "erc20": [
+    {
+      "currency_symbol": "SRN",
+      "contract_address": "0x68f2b68f30e1b6379661514d0ed6efb66a19cedc"
+    },
+    {
+      "currency_symbol": "STX",
+      "contract_address": "0x7ed101943aea457d162d1d04bd38f3a2de3cb78c"
+    }
+  ],
+  "supported_coins": [
+    {
+      "name": "ethereum",
+      "currency_symbol": "ETH",
+      "decimal": "18"
+    },
+    {
+      "name": "bitcoin",
+      "currency_symbol": "BTC",
+      "decimal": "18"
+    },
+    {
+      "name": "sirin-labs-token",
+      "currency_symbol": "SRN",
+      "decimal": "18"
+    }
+  ],
+  "nodes": [
+    {
+      "network_symbol": "BTC",
+      "name": "btc.swapr.rocks",
+      "hostname": "btc.swapr.rocks",
+      "port": 18332,
+      "timeout": 30000
+    },
+    {
+      "network_symbol": "ETH",
+      "name": "eth.swapr.rocks",
+      "hostname": "eth.swapr.rocks",
+      "port": 8545
+    }
+  ]
+}
