@@ -1,4 +1,4 @@
-# SWAPR #
+# Token Conversion Service (SWAPR) #
 
 SWAPR is a cryptocurreny conversion back-end written in node.js.
 It exposes a REST API which clients use to create conversion "orders", stored as "tickets" in the db.
@@ -10,8 +10,6 @@ Each Dapp may require it's own token but for a SirinOS user, it is possible to h
 coins/tokens and be able to convert to all Dapp tokens that take part of the SirinOS eco-system.
 
 ## Installation and Usage ##
-
-
 
 ### Installing Dependencies ###
 
@@ -27,7 +25,7 @@ coins/tokens and be able to convert to all Dapp tokens that take part of the Sir
 ### Staging Deployment ###
 
 The staging environment is accessible only from SIRIN R&D offices.
-If you intend to fork swapr.js you need to setup Bitcoin (bitcoind) and Ethereum (parity / geth) full nodes.
+If you intend to fork swapr.js you need to setup Bitcoin (bitcoind) and Ethereum (parity / geth) full nodes and change configuration accordingly in ```db/db_config.json```.
 
 * The staging deployment is at: [www.swapr.rocks](http://www.swapr.rocks/ "www.swapr.rocks").
 * An Ethereum node is deployed to: [eth.swapr.rocks](http://eth.swapr.rocks/ "eth.swapr.rocks").
@@ -74,12 +72,12 @@ The server responds with instructions how to complete the order.
 #### Client Request JSON Format ####
 ```json
 {
-    'target_coin':'SRN',
-    'target_address':'0x0095991b80E5A549603da18Af19358A1517267F2',
-    'source_accounts': [
+    "target_coin": "SRN",
+    "target_address": "0x0095991b80E5A549603da18Af19358A1517267F2",
+    "source_accounts": [
         {
-            'coin': 'ETH',
-            'address': '0x0095991b80E5A549603da18Af19358A1517267F2'
+            "coin": "ETH",
+            "address": "0x0095991b80E5A549603da18Af19358A1517267F2"
         }
     ]
 }
@@ -88,12 +86,12 @@ The server responds with instructions how to complete the order.
 #### Server Response JSON Format ####
 ```json
 {
-    'order_id': '36397e44-c579-41fb-a881-380ce98b8804',
-    'deposit_address': '0x00e8fb8ff60845f4d88b955b7e1d0cc6bff0806f',
-    'deposit_blend': [
+    "order_id": "36397e44-c579-41fb-a881-380ce98b8804",
+    "deposit_address": "0x00e8fb8ff60845f4d88b955b7e1d0cc6bff0806f",
+    "deposit_blend": [
         {
-            'coin': 'ETH',
-            'address': '0x0095991b80E5A549603da18Af19358A1517267F2'
+            "coin": "ETH",
+            "address": "0x0095991b80E5A549603da18Af19358A1517267F2"
         }
     ]
 }
@@ -112,12 +110,12 @@ Used to query the rates table for all pairs.
 ```json
 [
     {
-       'pair': 'ETH-SRN',
-       'rate': '0.56' 
+       "pair": "ETH-SRN",
+       "rate": "0.56" 
     },
     {
-       'pair': 'SRN-ETH',
-       'rate': '1.78'
+       "pair": "SRN-ETH",
+       "rate": "1.78"
     }
 ]
 ```
@@ -131,8 +129,8 @@ Used to query the rate for a specific pair.
 #### Server Response JSON Format ####
 ```json
 [
-    'ETH',
-    'SRN',
-    'STX'
+    "ETH",
+    "SRN",
+    "STX"
 ]
 ```
